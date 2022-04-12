@@ -55,13 +55,13 @@ public class Harta extends MapView{
 					
 					Circle cerc1 = new Circle(map);
 					cerc1.setCenter(mark1.getPosition());
-					cerc1.setRadius(100.0);
+					cerc1.setRadius(50.0);
 					Circle cerc2 = new Circle(map);
 					cerc2.setCenter(mark2.getPosition());
-					cerc2.setRadius(500.0);
+					cerc2.setRadius(100.0);
 					Circle cerc3 = new Circle(map);
 					cerc3.setCenter(new LatLng(47.156910, 27.604047));
-					cerc3.setRadius(300.0);
+					cerc3.setRadius(70.0);
 					/*
 					 * Setarile pentru fiecare cerc folosind CircleOption()
 					 * si am atribuit fiecarui cerc cate un co(CircleOption)
