@@ -44,12 +44,13 @@ public class Harta extends MapView{
 					mark1.setPosition(map.getCenter());
 					Marker mark2 = new Marker(map);
 					mark2.setPosition(new LatLng(47.156323, 27.587552));
-					Marker mark3 = new Marker(map);
-					mark3.setPosition(new LatLng(47.156910, 27.604047));
+					//Marker mark3 = new Marker(map);
+					//mark3.setPosition(new LatLng(47.156910, 27.604047));
 					
 					/*
 					 * Cate 1 cerc pentru fiecare marcaj si am folosit getPosition pentru a
 					 * seta centrul cercului, urmat de raza sa
+					 * Pt cerc3 am folosit new LatLng in loc de getPosition si recomand pt functii
 					 */
 					
 					Circle cerc1 = new Circle(map);
@@ -59,11 +60,12 @@ public class Harta extends MapView{
 					cerc2.setCenter(mark2.getPosition());
 					cerc2.setRadius(500.0);
 					Circle cerc3 = new Circle(map);
-					cerc3.setCenter(mark3.getPosition());
+					cerc3.setCenter(new LatLng(47.156910, 27.604047));
 					cerc3.setRadius(300.0);
 					/*
 					 * Setarile pentru fiecare cerc folosind CircleOption()
 					 * si am atribuit fiecarui cerc cate un co(CircleOption)
+					 * 
 					 */
 					
 					
