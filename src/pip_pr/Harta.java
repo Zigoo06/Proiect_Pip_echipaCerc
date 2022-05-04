@@ -1,6 +1,7 @@
 package pip_pr;
 
 import java.awt.BorderLayout;
+import java.io.IOException;
 
 import javax.swing.JFrame;
 
@@ -56,6 +57,7 @@ public class Harta extends MapView{
 					Circle cerc1 = new Circle(map);
 					cerc1.setCenter(mark1.getPosition());
 					cerc1.setRadius(50.0);
+					/*
 					Circle cerc2 = new Circle(map);
 					cerc2.setCenter(mark2.getPosition());
 					cerc2.setRadius(100.0);
@@ -81,8 +83,20 @@ public class Harta extends MapView{
 					
 					
 					cerc1.setOptions(co1);
-					cerc2.setOptions(co2);
-					cerc3.setOptions(co3);
+					//cerc2.setOptions(co2);
+					//cerc3.setOptions(co3);
+					
+					FunctieCercuri f1=new FunctieCercuri();
+					
+					try {
+						f1.FctCercuri(map);
+					
+					} catch (IOException e) {
+						// TODO Auto-generated catch block
+						e.printStackTrace();
+					}
+					
+					
 					
 				}
 			}
@@ -103,5 +117,6 @@ public class Harta extends MapView{
 	
 	public static void main(String[] args){
 		Harta mapa = new Harta("In fata facultatii");
+		
 	}
 }
