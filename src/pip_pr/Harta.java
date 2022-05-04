@@ -1,6 +1,8 @@
 package pip_pr;
 
 import java.awt.BorderLayout;
+import java.awt.List;
+import java.util.ArrayList;
 
 import javax.swing.JFrame;
 
@@ -8,9 +10,12 @@ import com.teamdev.jxmaps.swing.MapView;
 import com.teamdev.jxmaps.*;
 
 
+import java.util.ArrayList;
+import java.util.HashMap;
 public class Harta extends MapView{
 	
 	private Map map;
+	
 	
 	public Harta(String nName){
 		
@@ -62,6 +67,7 @@ public class Harta extends MapView{
 					Circle cerc3 = new Circle(map);
 					cerc3.setCenter(new LatLng(47.156910, 27.604047));
 					cerc3.setRadius(70.0);
+				
 					/*
 					 * Setarile pentru fiecare cerc folosind CircleOption()
 					 * si am atribuit fiecarui cerc cate un co(CircleOption)
@@ -79,11 +85,21 @@ public class Harta extends MapView{
 					co3.setFillColor("#ec1313");
 					co3.setFillOpacity(0.35);
 					
+		
+					
 					
 					cerc1.setOptions(co1);
 					cerc2.setOptions(co2);
 					cerc3.setOptions(co3);
 					
+					FunctieCercuri f1=new FunctieCercuri();
+					f1.FctCercuri(map);
+				
+					
+					
+			    
+					
+
 				}
 			}
 		});
@@ -100,6 +116,7 @@ public class Harta extends MapView{
 	 * Initializare Harta
 	 * @param args
 	 */
+	
 	
 	public static void main(String[] args){
 		Harta mapa = new Harta("In fata facultatii");
