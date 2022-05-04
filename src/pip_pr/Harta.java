@@ -11,6 +11,26 @@ import com.teamdev.jxmaps.*;
 public class Harta extends MapView{
 	
 	private Map map;
+	int zona=0;
+	/**
+	 * seteaza culorile cercurilor in functie de zona aleasa
+	 * @Author Cati
+	 * @param c
+	 */
+	public void setColor(Circle c){
+		CircleOptions co1 = new CircleOptions();
+		if(zona==1){
+		co1.setFillColor("#9a0000");
+		co1.setFillOpacity(0.50);
+		}
+		else if(zona==2){
+				co1.setFillColor("#1aab7a");
+				co1.setFillOpacity(0.30);
+			}
+		c.setOptions(co1);
+		
+
+	}
 	
 	public Harta(String nName){
 		
@@ -69,7 +89,7 @@ public class Harta extends MapView{
 					 */
 					
 					
-					CircleOptions co1 = new CircleOptions();
+					/*CircleOptions co1 = new CircleOptions();
 					co1.setFillColor("#2e7778");
 					co1.setFillOpacity(0.50);
 					CircleOptions co2 = new CircleOptions();
@@ -83,6 +103,10 @@ public class Harta extends MapView{
 					cerc1.setOptions(co1);
 					cerc2.setOptions(co2);
 					cerc3.setOptions(co3);
+					*/
+					setColor(cerc1);
+					setColor(cerc2);
+					setColor(cerc3);
 					
 				}
 			}
