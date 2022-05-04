@@ -2,16 +2,37 @@ package pip_pr;
 
 import java.awt.BorderLayout;
 import java.io.IOException;
-
+import java.awt.List;
+import java.util.ArrayList;
 import javax.swing.JFrame;
-
 import com.teamdev.jxmaps.swing.MapView;
 import com.teamdev.jxmaps.*;
-
-
+import java.util.ArrayList;
+import java.util.HashMap;
 public class Harta extends MapView{
 	
 	private Map map;
+	int zona=0;
+	/**
+	 * seteaza culorile cercurilor in functie de zona aleasa
+	 * @Author Cati
+	 * @param c
+	 */
+	public void setColor(Circle c){
+		CircleOptions co1 = new CircleOptions();
+		if(zona==1){
+		co1.setFillColor("#9a0000");
+		co1.setFillOpacity(0.50);
+		}
+		else if(zona==2){
+				co1.setFillColor("#1aab7a");
+				co1.setFillOpacity(0.30);
+			}
+		c.setOptions(co1);
+		
+
+	}
+	
 	
 	public Harta(String nName){
 		
@@ -64,6 +85,7 @@ public class Harta extends MapView{
 					Circle cerc3 = new Circle(map);
 					cerc3.setCenter(new LatLng(47.156910, 27.604047));
 					cerc3.setRadius(70.0);
+				
 					/*
 					 * Setarile pentru fiecare cerc folosind CircleOption()
 					 * si am atribuit fiecarui cerc cate un co(CircleOption)
@@ -71,7 +93,7 @@ public class Harta extends MapView{
 					 */
 					
 					
-					CircleOptions co1 = new CircleOptions();
+					/*CircleOptions co1 = new CircleOptions();
 					co1.setFillColor("#2e7778");
 					co1.setFillOpacity(0.50);
 					CircleOptions co2 = new CircleOptions();
@@ -80,6 +102,8 @@ public class Harta extends MapView{
 					CircleOptions co3 = new CircleOptions();
 					co3.setFillColor("#ec1313");
 					co3.setFillOpacity(0.35);
+					
+		
 					
 					
 					cerc1.setOptions(co1);
@@ -96,8 +120,16 @@ public class Harta extends MapView{
 						e.printStackTrace();
 					}
 					
+					cerc2.setOptions(co2);
+					cerc3.setOptions(co3);
+					*/
+					setColor(cerc1);
+					setColor(cerc2);
+					setColor(cerc3);
 					
-					
+					FunctieCercuri f1=new FunctieCercuri();
+					f1.FctCercuri(map);
+				
 				}
 			}
 		});
@@ -114,6 +146,7 @@ public class Harta extends MapView{
 	 * Initializare Harta
 	 * @param args
 	 */
+	
 	
 	public static void main(String[] args){
 		Harta mapa = new Harta("In fata facultatii");

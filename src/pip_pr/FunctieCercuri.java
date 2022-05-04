@@ -10,12 +10,16 @@ import java.io.InputStreamReader;
 import java.io.RandomAccessFile;
 import java.util.Scanner;
 import java.util.StringTokenizer;
-
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+import java.io.RandomAccessFile;
 import com.teamdev.jxmaps.Circle;
 import com.teamdev.jxmaps.CircleOptions;
 import com.teamdev.jxmaps.LatLng;
 import com.teamdev.jxmaps.Map;
 import com.teamdev.jxmaps.swing.MapView;
+
  /**
   *  clasa creaza cercuri
   * @author Otilia si Larisa
@@ -62,4 +66,7 @@ public class FunctieCercuri
 	   
    }
 }
-      
+ 
+
+
+
