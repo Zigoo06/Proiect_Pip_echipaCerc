@@ -24,7 +24,6 @@ public class Harta extends MapView{
 	private Map map;
 	
 	public Harta(String nName){
-		
 		JFrame frame= new JFrame(nName);
 		JMenu meniu1;
 		JMenuBar mb1 = new JMenuBar();
