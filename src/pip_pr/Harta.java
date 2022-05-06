@@ -104,9 +104,9 @@ public class Harta extends MapView{
 					co3.setFillOpacity(0.35);
 					
 		
+					*/
 					
-					
-					cerc1.setOptions(co1);
+					//cerc1.setOptions(co1);
 					//cerc2.setOptions(co2);
 					//cerc3.setOptions(co3);
 					
@@ -119,16 +119,16 @@ public class Harta extends MapView{
 						// TODO Auto-generated catch block
 						e.printStackTrace();
 					}
-					
+					/*
 					cerc2.setOptions(co2);
 					cerc3.setOptions(co3);
-					*/
+					
 					setColor(cerc1);
 					setColor(cerc2);
 					setColor(cerc3);
 					
 					FunctieCercuri f1=new FunctieCercuri();
-					f1.FctCercuri(map);
+					f1.FctCercuri(map);*/
 				
 				}
 			}
