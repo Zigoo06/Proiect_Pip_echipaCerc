@@ -1,6 +1,25 @@
 package pip_pr;
-
 import java.awt.BorderLayout;
+
+import java.awt.AWTException;
+import java.awt.DisplayMode;
+import java.awt.GraphicsEnvironment;
+import java.awt.Rectangle;
+import java.awt.Robot;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import javax.imageio.ImageIO;
+import javax.swing.JFileChooser;
+import javax.swing.JFrame;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
+import com.teamdev.jxmaps.swing.MapView;
+import com.teamdev.jxmaps.*;
+
 import java.io.IOException;
 import java.awt.List;
 import java.util.ArrayList;
@@ -9,6 +28,7 @@ import com.teamdev.jxmaps.swing.MapView;
 import com.teamdev.jxmaps.*;
 import java.util.ArrayList;
 import java.util.HashMap;
+
 public class Harta extends MapView{
 	
 	private Map map;
@@ -35,8 +55,60 @@ public class Harta extends MapView{
 	
 	
 	public Harta(String nName){
-		
+  	/**
+	 *
+	 * @Author Daniel
+	 * @param c
+	 */
 		JFrame frame= new JFrame(nName);
+		JMenu meniu1;
+		JMenuBar mb1 = new JMenuBar();
+	    meniu1 = new JMenu("Screen");
+	    
+	    mb1.add(meniu1);
+	    frame.setJMenuBar(mb1);
+
+        JMenuItem screenshot =new JMenuItem("Screenshot");
+
+        meniu1.add(screenshot);
+        screenshot.addActionListener(new ActionListener(){
+			public void actionPerformed(ActionEvent e)  {
+				
+				try {
+					JFileChooser file1 = new JFileChooser();
+				      file1.setMultiSelectionEnabled(true);
+				      file1.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
+				      file1.setFileHidingEnabled(false);
+				      if (file1.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
+				         File f = file1.getSelectedFile();
+				         System.out.println(f.getPath());
+				         
+				      }
+				      //destinatie va fi path ul ales convertit la string
+				    String destinatie = file1.getSelectedFile().getPath().toString();
+		            DisplayMode displayMode = GraphicsEnvironment.getLocalGraphicsEnvironment().getScreenDevices()[0].getDisplayMode();
+		            Rectangle screenRectangle = new Rectangle(displayMode.getWidth(), displayMode.getHeight());
+		            BufferedImage screenShot = new Robot().createScreenCapture(screenRectangle);
+		            //File file = new File(destinatie+"\\screen-capture.png");
+		            //ImageIO.write(screenShot, "png", file);
+		            
+		            Rectangle r = frame.getBounds( );
+
+		            BufferedImage dst = new BufferedImage(r.width, r.height, BufferedImage.TYPE_INT_ARGB);
+		            dst.getGraphics().drawImage(screenShot, 0, 0, r.width, r.height, r.x+10, r.y+60, r.x + r.width-60, r.y + r.height-40, null);
+
+		            		
+		            //File filec = new File(destinatie+"\\screen-capture-cropped.png");
+		            File filec = new File(destinatie+".png");
+
+		            ImageIO.write(dst, "png", filec);
+          
+		 
+		        } catch ( AWTException | IOException ex) {
+		            System.err.println(ex);
+		        }
+			}
+		});
 		
 		setOnMapReadyHandler(new MapReadyHandler() {
 			
