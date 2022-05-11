@@ -1,24 +1,11 @@
 package pip_pr;
-
 import java.io.BufferedReader;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.RandomAccessFile;
-import java.util.Scanner;
-import java.util.StringTokenizer;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
-import java.io.RandomAccessFile;
 import com.teamdev.jxmaps.Circle;
-import com.teamdev.jxmaps.CircleOptions;
 import com.teamdev.jxmaps.LatLng;
 import com.teamdev.jxmaps.Map;
-import com.teamdev.jxmaps.swing.MapView;
 
  /**
   *  clasa creaza cercuri
@@ -33,20 +20,27 @@ public class FunctieCercuri
    * @param map
    * @throws IOException
    */
-   public void FctCercuri(Map map) throws IOException 
-   {      float lat;
-          float lang;
+   public void FctCercuri(Map map,int zona) throws IOException 
+   {     
+	   int z=zona;
+	   float lat;
+       float lang;
+       double intensitate=0;
 	   try{
 		   
-	    File file=new File("src\\coordonate");
-	    Scanner scan=new Scanner(file);
+	    File file=new File("src\\processed_at_ac-depou.csv");
+	    String line="";
+	    BufferedReader br=new BufferedReader(new FileReader(file));
 	   
-	   String fileContent="";
-	   while(scan.hasNext()){
+	   
+	
+	   while((line=br.readLine())!=null)
+	   {
+		   line=br.readLine();
+		   String[] values=line.split(",");
 		   
-		   
-		   lat=Float.parseFloat(scan.next());
-		   lang=Float.parseFloat(scan.next());
+		   lat=Float.parseFloat(values[0]);
+		   lang=Float.parseFloat(values[2]);
 		   Circle cerc = new Circle(map);
 			cerc.setCenter(new LatLng(lat,lang));
 			cerc.setRadius(50.0);
@@ -56,11 +50,20 @@ public class FunctieCercuri
 			co.setFillOpacity(0.50);
 		     
 			cerc.setOptions(co);*/
+			if(z==1)
+			{
+				intensitate=Double.parseDouble(values[7]);
+				
+			}
+			else if(z==2)
+			{
+				intensitate=Double.parseDouble(values[5]);
+				
+			}
+		  new Culoare(cerc,z,intensitate);
 			
-			Culoare cul=new Culoare(cerc,1);
-			fileContent=fileContent.concat(scan.nextLine()+"\n");
 	   }
-		   scan.close();
+		   br.close();
 	   }
 	   catch(IOException e){
 		   System.out.println("Sfarsit flux");
