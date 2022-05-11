@@ -26,43 +26,33 @@ public class FunctieCercuri
 	   float lat;
        float lang;
        double intensitate=0;
-	   try{
+	   try{ 
+		   File file=new File("src\\processed_at_ac-depou.csv");
+		   String line="";
+		   BufferedReader br=new BufferedReader(new FileReader(file));
+		   while((line=br.readLine())!=null)
+		   {
+			   line=br.readLine();
+			   String[] values=line.split(",");
 		   
-	    File file=new File("src\\processed_at_ac-depou.csv");
-	    String line="";
-	    BufferedReader br=new BufferedReader(new FileReader(file));
-	   
-	   
-	
-	   while((line=br.readLine())!=null)
-	   {
-		   line=br.readLine();
-		   String[] values=line.split(",");
-		   
-		   lat=Float.parseFloat(values[0]);
-		   lang=Float.parseFloat(values[2]);
-		   Circle cerc = new Circle(map);
-			cerc.setCenter(new LatLng(lat,lang));
-			cerc.setRadius(50.0);
-			/*
-			CircleOptions co = new CircleOptions();
-			co.setFillColor("#2e7778");
-			co.setFillOpacity(0.50);
-		     
-			cerc.setOptions(co);*/
-			if(z==1)
-			{
-				intensitate=Double.parseDouble(values[7]);
+			   lat=Float.parseFloat(values[0]);
+			   lang=Float.parseFloat(values[2]);
+			   Circle cerc = new Circle(map);
+			   cerc.setCenter(new LatLng(lat,lang));
+			   cerc.setRadius(50.0);
+			   if(z==1)
+			   {
+				   intensitate=Double.parseDouble(values[7]);
 				
-			}
-			else if(z==2)
-			{
-				intensitate=Double.parseDouble(values[5]);
+			   }
+			   else if(z==2)
+			   {
+				   intensitate=Double.parseDouble(values[5]);
 				
-			}
-		  new Culoare(cerc,z,intensitate);
+			   }
+			   new Culoare(cerc,z,intensitate);
 			
-	   }
+		   }
 		   br.close();
 	   }
 	   catch(IOException e){
