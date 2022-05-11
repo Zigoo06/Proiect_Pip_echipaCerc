@@ -32,12 +32,9 @@ import java.util.HashMap;
 public class Harta extends MapView{
 	
 	private Map map;
+	/*
 	int zona=0;
-	/**
-	 * seteaza culorile cercurilor in functie de zona aleasa
-	 * @Author Cati
-	 * @param c
-	 */
+	
 	public void setColor(Circle c){
 		CircleOptions co1 = new CircleOptions();
 		if(zona==1){
@@ -51,7 +48,7 @@ public class Harta extends MapView{
 		c.setOptions(co1);
 		
 
-	}
+	}*/
 	
 	
 	public Harta(String nName){
