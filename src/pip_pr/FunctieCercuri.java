@@ -38,7 +38,7 @@ public class FunctieCercuri
           float lang;
 	   try{
 		   
-	    File file=new File("D:\\eclipse\\PIP-PRR\\Proiect_Pip_echipaCerc\\citireCoord.txt");
+	    File file=new File("src\\coordonate");
 	    Scanner scan=new Scanner(file);
 	   
 	   String fileContent="";
@@ -50,12 +50,14 @@ public class FunctieCercuri
 		   Circle cerc = new Circle(map);
 			cerc.setCenter(new LatLng(lat,lang));
 			cerc.setRadius(50.0);
-
+			/*
 			CircleOptions co = new CircleOptions();
 			co.setFillColor("#2e7778");
 			co.setFillOpacity(0.50);
 		     
-			cerc.setOptions(co);
+			cerc.setOptions(co);*/
+			
+			Culoare cul=new Culoare(cerc,1);
 			fileContent=fileContent.concat(scan.nextLine()+"\n");
 	   }
 		   scan.close();
