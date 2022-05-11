@@ -15,6 +15,7 @@ public class Zona5G implements ActionListener {
 		try
         {
 			Harta.zona=1;
+			Harta.f1.FctCercuri(Harta.map,Harta.zona);
         }
         catch(Exception exception)
         {
