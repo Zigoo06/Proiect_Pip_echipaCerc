@@ -28,7 +28,7 @@ import com.teamdev.jxmaps.*;
 public class Harta extends MapView{
 	
 	private Map map;
-	public int zona=1;
+	public int zona=2;
 	/*
 	int zona=0;
 	
