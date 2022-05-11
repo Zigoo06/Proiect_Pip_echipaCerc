@@ -5,7 +5,6 @@ import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
-import java.io.IOException;
 import com.teamdev.jxmaps.swing.MapView;
 import com.teamdev.jxmaps.*;
 
@@ -14,8 +13,9 @@ import com.teamdev.jxmaps.*;
 @SuppressWarnings("serial")
 public class Harta extends MapView{
 	
-	private Map map;
+	static Map map;
 	public static int zona=1;
+	static FunctieCercuri f1=new FunctieCercuri();
 	
 	public Harta(String nName){
   	/**
@@ -60,18 +60,7 @@ public class Harta extends MapView{
 					map.setOptions(mapOptions);
 					map.setCenter(new LatLng(47.154279,27.594155));
 					map.setZoom(15.2);
-					
-					FunctieCercuri f1=new FunctieCercuri();
-					
-					try {
-						f1.FctCercuri(map,zona);
-					
-					} catch (IOException e) {
-						// TODO Auto-generated catch block
-						e.printStackTrace();
-					}
-				
-				
+
 				}
 			}
 		});
