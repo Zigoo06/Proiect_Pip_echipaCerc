@@ -1,6 +1,5 @@
 package pip_pr;
 import java.awt.BorderLayout;
-
 import java.awt.AWTException;
 import java.awt.DisplayMode;
 import java.awt.GraphicsEnvironment;
@@ -8,30 +7,28 @@ import java.awt.Rectangle;
 import java.awt.Robot;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
 import javax.imageio.ImageIO;
 import javax.swing.JFileChooser;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+
 import com.teamdev.jxmaps.swing.MapView;
 import com.teamdev.jxmaps.*;
 
-import java.io.IOException;
-import java.awt.List;
-import java.util.ArrayList;
-import javax.swing.JFrame;
-import com.teamdev.jxmaps.swing.MapView;
-import com.teamdev.jxmaps.*;
-import java.util.ArrayList;
-import java.util.HashMap;
 
+
+@SuppressWarnings("serial")
 public class Harta extends MapView{
 	
 	private Map map;
+	public int zona=1;
 	/*
 	int zona=0;
 	
@@ -182,7 +179,7 @@ public class Harta extends MapView{
 					FunctieCercuri f1=new FunctieCercuri();
 					
 					try {
-						f1.FctCercuri(map);
+						f1.FctCercuri(map,zona);
 					
 					} catch (IOException e) {
 						// TODO Auto-generated catch block
@@ -217,8 +214,9 @@ public class Harta extends MapView{
 	 */
 	
 	
-	public static void main(String[] args){
-		Harta mapa = new Harta("In fata facultatii");
+	public static void main(String[] args)
+	{
+		new Harta("In fata facultatii");
 		
 	}
 }
