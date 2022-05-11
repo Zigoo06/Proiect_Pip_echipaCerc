@@ -9,6 +9,7 @@ import com.teamdev.jxmaps.CircleOptions;
  */
 public class Culoare {
 	public int zona=0;
+	double intens;
 	Circle cerc;
 	/**
 	 *   Constructorul primeste fiecare cerc creat si in functie de zona stabilita
@@ -17,9 +18,10 @@ public class Culoare {
 	 * @param c  -cerccul primit
 	 * @param zon -zona ceruta
 	 */
-	Culoare(Circle c,int zon){
+	Culoare(Circle c,int zon,double intensitate){
 		cerc=c;
 		zona=zon;
+		intens=intensitate;
 		CircleOptions co = new CircleOptions();
 		if(zona==1){
 			co.setFillColor("#14ef3a");
