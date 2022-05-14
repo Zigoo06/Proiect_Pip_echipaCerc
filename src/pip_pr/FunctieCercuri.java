@@ -39,7 +39,7 @@ public class FunctieCercuri
 			   lang=Float.parseFloat(values[2]);
 			   Circle cerc = new Circle(map);
 			   cerc.setCenter(new LatLng(lat,lang));
-			   cerc.setRadius(50.0);
+			   cerc.setRadius(30.0);
 			   if(z==1)
 			   {
 				   intensitate=Double.parseDouble(values[7]);
