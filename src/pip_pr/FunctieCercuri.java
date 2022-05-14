@@ -43,7 +43,6 @@ public class FunctieCercuri
 			   if(z==1)
 			   {
 				   intensitate=Double.parseDouble(values[7]);
-				
 			   }
 			   else if(z==2)
 			   {
