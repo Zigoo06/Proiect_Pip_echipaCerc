@@ -70,6 +70,7 @@ public class Harta extends MapView{
 		frame.add(this,BorderLayout.CENTER);
 		frame.setSize(900,700);
 		frame.setVisible(true);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
 }
