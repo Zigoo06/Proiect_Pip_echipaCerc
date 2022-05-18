@@ -9,20 +9,26 @@ import com.teamdev.jxmaps.swing.MapView;
 import com.teamdev.jxmaps.*;
 
 
-
+/**
+ * Clasa Harta utilizeaza un API pentru a afisa google maps
+ * Clasa Harta extinde MapView
+ * @author Laur
+ *
+ */
 @SuppressWarnings("serial")
 public class Harta extends MapView{
 	
 	static Map map;
 	public static int zona=1;
 	static FunctieCercuri f1=new FunctieCercuri();
-	
-	public Harta(String nName){
-  	/**
+	/**
+	 * Constructorul creeaza un nou frame pentru aplicatie si adauga menu-urile
+	 * Menu pentru ScreenShot care foloseste clasa ScreenShot
+	 * Menu pentru zone de unde putem selecta afisarea zonei 5G sau 4G
 	 *
-	 * @Author Daniel
-	 * @param c
+	 * @param nName numele Hartii
 	 */
+	public Harta(String nName){
 		JFrame frame= new JFrame(nName);
 		JMenu meniu1;
 		JMenuBar mb1 = new JMenuBar();
@@ -50,6 +56,10 @@ public class Harta extends MapView{
 			
 			@Override
 			public void onMapReady(MapStatus status) {
+				/**
+				 * Setare optiuni si centru pentru Harta
+				 *
+				 */
 				if(status == MapStatus.MAP_STATUS_OK)
 				{
 					map = getMap();
@@ -59,18 +69,16 @@ public class Harta extends MapView{
 					mapOptions.setMapTypeControlOptions(mapControl);
 					map.setOptions(mapOptions);
 					map.setCenter(new LatLng(47.154279,27.594155));
-					map.setZoom(15.2);
+					map.setZoom(15);
 
 				}
 			}
 		});
-		/*
-		 * Creare frame, dimensiuni si vizibilitate
-		 */
+		 // Creare frame, dimensiuni si setare vizibilitate
+		 
 		frame.add(this,BorderLayout.CENTER);
 		frame.setSize(900,700);
 		frame.setVisible(true);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
-
 }
