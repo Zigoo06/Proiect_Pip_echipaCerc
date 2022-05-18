@@ -3,8 +3,9 @@ package pip_pr;
 import com.teamdev.jxmaps.Circle;
 import com.teamdev.jxmaps.CircleOptions;
 /**
+ * Clasa coloreaza fiecare cerc creat in functie de zona stabilita
  * 
- * @author Cati
+ * @author Ecaterina
 
  */
 public class Culoare {
@@ -15,8 +16,8 @@ public class Culoare {
 	 *   Constructorul primeste fiecare cerc creat si in functie de zona stabilita
 	 * 	acesta va schimba culoarea si opacitatea
 	 *
-	 * @param c  -cerccul primit
-	 * @param zon -zona ceruta
+	 * @param c  Cercul primit
+	 * @param zon Zona ceruta
 	 */
 	Culoare(Circle c,int zon,double intensitate){
 		cerc=c;
