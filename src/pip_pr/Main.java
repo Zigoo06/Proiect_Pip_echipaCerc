@@ -2,7 +2,7 @@ package pip_pr;
 
 /***
  * Initializare Harta
- * @param args
+ * 
  */
 
 public class Main {
