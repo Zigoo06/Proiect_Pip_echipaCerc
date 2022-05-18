@@ -21,7 +21,7 @@ public class Harta extends MapView{
   	/**
 	 *
 	 * @Author Daniel
-	 * @param c
+	 * 
 	 */
 		JFrame frame= new JFrame(nName);
 		JMenu meniu1;
@@ -70,7 +70,6 @@ public class Harta extends MapView{
 		frame.add(this,BorderLayout.CENTER);
 		frame.setSize(900,700);
 		frame.setVisible(true);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 
 }
