@@ -26,6 +26,8 @@ public class Harta extends MapView{
 	 * Menu pentru ScreenShot care foloseste clasa ScreenShot
 	 * Menu pentru zone de unde putem selecta afisarea zonei 5G sau 4G
 	 *
+	 * @Author Daniel
+	 * 
 	 * @param nName numele Hartii
 	 */
 	public Harta(String nName){
@@ -79,6 +81,5 @@ public class Harta extends MapView{
 		frame.add(this,BorderLayout.CENTER);
 		frame.setSize(900,700);
 		frame.setVisible(true);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
 }

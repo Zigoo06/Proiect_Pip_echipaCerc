@@ -17,7 +17,8 @@ import javax.swing.JFrame;
 /**
 *
 * @Author Daniel
-* @param c
+* Clasa pentru efectuarea unei capturi de fereastra
+* 
 */
 public class ScreenShot implements ActionListener {
 	JFrame frame;
@@ -28,6 +29,9 @@ public class ScreenShot implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		try {
+			/**
+			 * file1 va contine adresa la care va fi salvata captura, adresa ce va fi aleasa de catre utilizator
+			 */
 			JFileChooser file1 = new JFileChooser();
 		      file1.setMultiSelectionEnabled(true);
 		      file1.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
@@ -37,21 +41,26 @@ public class ScreenShot implements ActionListener {
 		         System.out.println(f.getPath());
 		         
 		      }
-		      //destinatie va fi path ul ales convertit la string
+		      
+		      /**
+		       * destinatie va fi path ul ales convertit la string
+		       */
 		    String destinatie = file1.getSelectedFile().getPath().toString();
             DisplayMode displayMode = GraphicsEnvironment.getLocalGraphicsEnvironment().getScreenDevices()[0].getDisplayMode();
             Rectangle screenRectangle = new Rectangle(displayMode.getWidth(), displayMode.getHeight());
             BufferedImage screenShot = new Robot().createScreenCapture(screenRectangle);
-            //File file = new File(destinatie+"\\screen-capture.png");
-            //ImageIO.write(screenShot, "png", file);
             
+            /**
+             * r va contine dimensiunile ferestrei
+             */
             Rectangle r = frame.getBounds();
-
             BufferedImage dst = new BufferedImage(r.width, r.height, BufferedImage.TYPE_INT_ARGB);
+            
+            /**
+             * dst - ne folosim de un screenshot la tot ecanul, din care decupam in functie de dimensiunilor ferestrei doar continutul ei
+             */
             dst.getGraphics().drawImage(screenShot, 0, 0, r.width, r.height, r.x+10, r.y+60, r.x + r.width-60, r.y + r.height-40, null);
 
-            		
-            //File filec = new File(destinatie+"\\screen-capture-cropped.png");
             File filec = new File(destinatie+".png");
 
             ImageIO.write(dst, "png", filec);
