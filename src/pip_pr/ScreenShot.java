@@ -21,8 +21,12 @@ import javax.swing.JFrame;
 * 
 */
 public class ScreenShot implements ActionListener {
-	JFrame frame;
-	ScreenShot(JFrame frame1){
+	public JFrame frame;
+	/**
+	 * 
+	 * @param frame1 fereastra - GUI - pentru care se doreste efectuarea unei capturi
+	 */
+	public ScreenShot(JFrame frame1){
 		frame=frame1;
 		
 	}
@@ -30,7 +34,8 @@ public class ScreenShot implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		try {
 			/**
-			 * file1 va contine adresa la care va fi salvata captura, adresa ce va fi aleasa de catre utilizator
+			 * alegerea locatiei de catre utilizator in care va fi salvata captura
+			 * file1 va contine locatia 
 			 */
 			JFileChooser file1 = new JFileChooser();
 		      file1.setMultiSelectionEnabled(true);
@@ -39,7 +44,6 @@ public class ScreenShot implements ActionListener {
 		      if (file1.showOpenDialog(null) == JFileChooser.APPROVE_OPTION) {
 		         File f = file1.getSelectedFile();
 		         System.out.println(f.getPath());
-		         
 		      }
 		      
 		      /**
@@ -60,11 +64,8 @@ public class ScreenShot implements ActionListener {
              * dst - ne folosim de un screenshot la tot ecanul, din care decupam in functie de dimensiunilor ferestrei doar continutul ei
              */
             dst.getGraphics().drawImage(screenShot, 0, 0, r.width, r.height, r.x+10, r.y+60, r.x + r.width-60, r.y + r.height-40, null);
-
             File filec = new File(destinatie+".png");
-
             ImageIO.write(dst, "png", filec);
-  
  
         } catch ( AWTException | IOException ex) {
             System.err.println(ex);
