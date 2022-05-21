@@ -25,8 +25,6 @@ public class Harta extends MapView{
 	 * Constructorul creeaza un nou frame pentru aplicatie si adauga menu-urile
 	 * Menu pentru ScreenShot care foloseste clasa ScreenShot
 	 * Menu pentru zone de unde putem selecta afisarea zonei 5G sau 4G
-	 *
-	 * @Author Daniel
 	 * 
 	 * @param nName numele Hartii
 	 */
