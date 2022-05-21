@@ -21,7 +21,11 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import pip_pr.ScreenShot;
-
+/**
+ * 
+ * @author Daniel
+ *
+ */
 public class ScreenShotTest {
 
 	@BeforeClass
