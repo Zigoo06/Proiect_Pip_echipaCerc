@@ -8,27 +8,44 @@ import com.teamdev.jxmaps.LatLng;
 import com.teamdev.jxmaps.Map;
 
  /**
-  *  clasa creaza cercuri
+  * 
+  *  Clasa pentru crearea zonelor
   * @author Otilia si Larisa
   *
   */
 public class FunctieCercuri 
 {
   /**
-   * Larisa-creare cercuri
-   *  Otilia-crearea lat,lang prin citire din fisier
+   * Larisa- Functia creeaza cercuri pe baza coordonatelo primite
+   *  Otilia- citirea  dintr-un  fisier  csv  a coordonatelor 
+   *  si a intensitatilor  in functie  de  semnalul  ales  5G/4G
    * @param map
    * @throws IOException
    */
+	
+
    public void FctCercuri(Map map,int zona) throws IOException 
    {     
 	   int z=zona;
 	   float lat;
        float lang;
        double intensitate=0;
-	   try{ 
+	   try{ /*
+	   
+	   *pe baza functiei create de Larisa am  facut citirea coordonatelor din fisier
+	   *
+	   *in  primul rand  am indicat sursa fisier 
+	   * 
+	   */
 		   File file=new File("src\\processed_at_ac-depou.csv");
 		   String line="";
+		   /*
+		    * citirea  se  face linie cu linie 
+		    * 
+		    * astfel  la  intalnirea caracterului  ","  pe  prima pozitie [0]  va  fi  lotitudinea  iar  pe  pozitia [2]  longitudinea
+		    *  punctele cardinale nelundu-le in considerare 
+		    * 
+		    * */
 		   BufferedReader br=new BufferedReader(new FileReader(file));
 		   while((line=br.readLine())!=null)
 		   {
