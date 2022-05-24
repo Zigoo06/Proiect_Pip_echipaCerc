@@ -12,6 +12,7 @@ public class Culoare {
 	public int zona=0;
 	double intens;
 	Circle cerc;
+	public CircleOptions co = new CircleOptions();
 	/**
 	 *   Constructorul primeste fiecare cerc creat si in functie de zona stabilita
 	 * 	acesta va schimba culoarea si opacitatea
@@ -19,11 +20,10 @@ public class Culoare {
 	 * @param c  Cercul primit
 	 * @param zon Zona ceruta
 	 */
-	Culoare(Circle c,int zon,double intensitate){
+	public Culoare(Circle c,int zon,double intensitate){
 		cerc=c;
 		zona=zon;
 		intens=intensitate;
-		CircleOptions co = new CircleOptions();
 		if(zona==1){
 			if(intens>30){
 				co.setFillColor("#064074");
