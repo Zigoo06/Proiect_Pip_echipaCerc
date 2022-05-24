@@ -16,9 +16,8 @@ import javax.swing.JFrame;
 
 /**
 *
-* @Author Daniel
 * Clasa pentru efectuarea unei capturi de fereastra
-* 
+* @Author Daniel
 */
 public class ScreenShot implements ActionListener {
 	public JFrame frame;
