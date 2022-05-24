@@ -59,6 +59,7 @@ public class ScreenShotTest {
 		DisplayMode displayMode = GraphicsEnvironment.getLocalGraphicsEnvironment().getScreenDevices()[0].getDisplayMode();
         Rectangle screenRectangle = new Rectangle(displayMode.getWidth(), displayMode.getHeight());
 		
+        
 		try {
 			screenShot = new Robot().createScreenCapture(screenRectangle);
 			
