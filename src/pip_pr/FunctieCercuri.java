@@ -22,8 +22,6 @@ public class FunctieCercuri
    * @param map
    * @throws IOException
    */
-	
-
    public void FctCercuri(Map map,int zona) throws IOException 
    {     
 	   int z=zona;
