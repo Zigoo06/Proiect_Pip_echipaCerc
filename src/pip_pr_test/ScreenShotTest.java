@@ -50,6 +50,7 @@ public class ScreenShotTest {
 		assertEquals((new ScreenShot(frame)).frame,null);
 	}
 
+	
 	@Test
 	public void testActionPerformed() throws IOException {
 		String destinatie ="D:\\";
